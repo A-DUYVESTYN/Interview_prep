@@ -9,25 +9,20 @@ The function should return an integer, the total time required.
 */
 
 const queueTime = function (customerArr, numTills) {
-
   // create array where each element represents a till and each element value is the customer time at that till
   const tillsArr = Array(numTills).fill(0)
   
   // takes in the tills array and outputs the index of the next available till
   const nextAvailableTill = function (Arr) {
-    minimum = Arr[0]
-    tillIndex = 0
+    let tillIndex = 0
     for (const i in Arr) {
-      if (Arr[i] < minimum) {
-        minimum = Arr[i]
-        tillIndex = i
-      }
+      if (Arr[i] < Arr[tillIndex]) tillIndex = i
     }
     return tillIndex
   }
 
   for (customerTime of customerArr) {
-    nextTillIndex = nextAvailableTill(tillsArr)
+    const nextTillIndex = nextAvailableTill(tillsArr)
     tillsArr[nextTillIndex] += customerTime
   }
   

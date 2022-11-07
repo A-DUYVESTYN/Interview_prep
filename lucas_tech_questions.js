@@ -206,5 +206,16 @@ Becomes colour:      G          R          B          G
 triangle('RBRGBRBGGRRRBGBBBGG'), 'G'
 triangle('RGBG'), 'B'
 
+/*
+AD notes:
+in the case of triangle('RGBG'), I expect the output to be 'G', not 'B' based on:
+R G B G
+ B R R
+  G R
+   B
+*/
+
+
+
 
 

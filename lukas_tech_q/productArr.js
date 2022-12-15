@@ -15,5 +15,13 @@ const productArray = (input) => {
   return input.map((e,i,arr) => arr.reduce((prev, curr) => prev * curr) / e)
 }
 
+// // more verbose solution, without division
+// const productArray = (input) => input.map( (e,i,arr) => {
+//   return arr.reduce((prev,curr) => {
+//     if (curr === e) return prev
+//     return prev * curr
+//   },1)
+// })
+
 
 console.log(productArray([10,3,5,6,2])) // return ==> [180,600,360,300,900]

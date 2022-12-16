@@ -10,11 +10,11 @@ For example, the string "This website is for losers LOL!" would become "Ths wbst
 
 Note: for this kata y isn't considered a vowel. */
 
-
 const removeVowel = (str) => {
   const vowels =['a','e','i','o','u']
-  const output = str.split("").filter(char => !vowels.includes(char)).join("")
+  const output = str.split("").filter(char => !vowels.includes(char.toLowerCase())).join("")
   return output
 }
 
 console.log(removeVowel("This website is for losers LOL!")) // "Ths wbst s fr lsrs LL!"
+console.log(removeVowel("I think this website is for losers LOL!")) // " thnk ths wbst s fr lsrs LL!"
